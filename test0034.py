@@ -13,7 +13,7 @@ file_text = 'test.txt'
 file_csv = 'test.csv'
 
 pdf = pdfplumber.open(f'{file_path}\\{file_pdf}')   # 開啟 pdf
-# print(pdf.pages)                          # [<Page:1>, <Page:2>, <Page:3>]，共有三頁
+print(pdf.pages)                          # [<Page:1>, <Page:2>, <Page:3>]，共有三頁
 
 
 page = pdf.pages[0]           # 讀取第一頁
@@ -43,4 +43,7 @@ csvfile = open(f'{file_path}\\{file_csv}', 'w+')  # 建立 CSV 檔案
 write = csv.writer(csvfile)           # 建立寫入物件
 for i in table:
     write.writerow(i)                 # 讀取表格每一列寫入 CSV
+    
 
+
+csvfile.close()
